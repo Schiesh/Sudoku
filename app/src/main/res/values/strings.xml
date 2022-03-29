@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Sudoku</string>
+    <string name="blankVal">""</string>
+    <string name="userBtn1">1</string>
+    <string name="userBtn2">2</string>
+    <string name="userBtn3">3</string>
+    <string name="userBtn4">4</string>
+    <string name="userBtn5">5</string>
+    <string name="userBtn6">6</string>
+    <string name="userBtn7">7</string>
+    <string name="userBtn8">8</string>
+    <string name="userBtn9">9</string>
+    <string name="userBtn1Clear">X</string>
+    <string name="gameCheck">Check</string>
+</resources>
