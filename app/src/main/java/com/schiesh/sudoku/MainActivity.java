@@ -26,6 +26,9 @@ public class MainActivity extends AppCompatActivity {
             R.id.btn79, R.id.btn80, R.id.btn81
     };
 
+    int easy = 45;
+    int medium = 50;
+    int hard = 55;
     int difficulty = 10;
     final int[][] sudokuFin = new int[9][9];
     final int[][] sudokuSol = new int[9][9];
