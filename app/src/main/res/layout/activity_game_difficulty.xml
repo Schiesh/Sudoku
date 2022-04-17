@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#4b4b4b">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#4b4b4b">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="30sp"
+            android:gravity="center"
+            android:layout_margin="20dp"
+            android:text="@string/setDiff"
+            android:fontFamily="serif-monospace"
+            android:textStyle="bold"
+            android:textColor="@color/cyan"/>
+
+        <RadioGroup
+            android:id="@+id/diff_radio_group"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RadioButton android:id="@+id/radio_easy"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="@string/easy"
+                android:fontFamily="serif-monospace"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:textColor="@color/cyan"/>
+
+            <RadioButton android:id="@+id/radio_medium"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="@string/medium"
+                android:fontFamily="serif-monospace"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:textColor="@color/cyan"/>
+
+            <RadioButton android:id="@+id/radio_hard"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="@string/hard"
+                android:fontFamily="serif-monospace"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:textColor="@color/cyan"/>
+
+        </RadioGroup>
+
+    </LinearLayout>
+
+</RelativeLayout>
