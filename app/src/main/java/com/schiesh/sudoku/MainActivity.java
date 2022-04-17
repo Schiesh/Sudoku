@@ -1,13 +1,16 @@
 package com.schiesh.sudoku;
 
+import android.app.Activity;
+import android.app.Instrumentation;
+import android.content.Intent;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Chronometer;
 import android.widget.EditText;
 import android.widget.TextView;
-
-import java.util.Arrays;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -30,51 +33,95 @@ public class MainActivity extends AppCompatActivity {
     int medium = 50;
     int hard = 55;
     int difficulty = 10;
+    int tries = 0;
+//    private int mDifficultyId;
     final int[][] sudokuFin = new int[9][9];
     final int[][] sudokuSol = new int[9][9];
+    Chronometer chronometer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+//        mDifficultyId = R.id.radio_easy;
         Sudoku sudoku = new Sudoku(9, difficulty);
         sudoku.fillValues();
         copy(sudoku, sudokuSol);
         sudoku.removeKDigits();
         fillGrid(sudoku);
         print2DArray(sudokuSol);
+        chronometer = findViewById(R.id.chronometer);
+        chronometer.start();
 
         final Button checkBtn = findViewById(R.id.checkBtn);
         checkBtn.setOnClickListener(new View.OnClickListener() {
+
             public void onClick(View v) {
                 int btnInt = 0;
-                for (int i = 0; i<9; i++)
-                {
-                    for (int j = 0; j<9; j++)
-                    {
-                        EditText myText = findViewById(btn_list[btnInt]);
-                        String val = myText.getText().toString();
-                        int finalVal = Integer.parseInt(val);
-                        sudoku.setValue(i, j, finalVal);
-                        copy(sudoku, sudokuFin);
-                        btnInt++;
+                try {
+                    for (int i = 0; i < 9; i++) {
+                        for (int j = 0; j < 9; j++) {
+                            EditText myText = findViewById(btn_list[btnInt]);
+                            String val = myText.getText().toString();
+                            int finalVal = Integer.parseInt(val);
+                            sudoku.setValue(i, j, finalVal);
+                            copy(sudoku, sudokuFin);
+                            btnInt++;
+                        }
+                    }
+                    if (equal(sudokuFin, sudokuSol)) {
+                        TextView textView = findViewById(R.id.condition);
+                        textView.setText(R.string.winner);
+                        chronometer.stop();
+                    } else if (tries == 3) {
+                        TextView textView = findViewById(R.id.condition);
+                        textView.setText(R.string.loser);
+                        chronometer.stop();
+                    } else {
+                        tries++;
+                        TextView textView = findViewById(R.id.condition);
+                        textView.setText(R.string.tryAgain + (3 - tries));
                     }
                 }
-                if (equal(sudokuFin, sudokuSol))
-                {
+                catch (NumberFormatException ex){
+                    if (tries < 3) {
+                        tries++;
+                    }
                     TextView textView = findViewById(R.id.condition);
-                    textView.setText("Congratulations, You Win!!");
+                    textView.setText(R.string.tryAgain);
+                    if (tries == 3) {
+                        textView.setText(R.string.loser);
+                        chronometer.stop();
+                    }
                 }
-                else
-                {
-                    TextView textView = findViewById(R.id.condition);
-                    textView.setText("Congratulations, You Lose!!");
-                }
-
             }
         });
 
     }
+
+//    public void onChangeDiffClick(View view) {
+//        // Send the current difficulty ID to GameDifficultyActivity
+//        Intent intent = new Intent(this, GameDifficulty.class);
+//        intent.putExtra(GameDifficulty.EXTRA_DIFF, mDifficultyId);
+//        mDiffResultLauncher.launch(intent);
+//    }
+//
+//    private final ActivityResultLauncher<Intent> mDiffResultLauncher = registerForActivityResult(
+//            new ActivityResultContracts.StartActivityForResult(),
+//            new ActivityREsultCallback<Instrumentation.ActivityResult>() {
+//                @Override
+//                public void onActivityResult(Instrumentation.ActivityResult result) {
+//                    if (result.getResultCode() == Activity.RESULT_OK) {
+//                        Intent data = result.getData();
+//                        if (data != null) {
+//                            // Create the "on" button diff from the chosen diff ID from GameDifficulty Activity
+//                            mDifficultyId = data.getIntExtra(GameDifficulty.EXTRA_DIFF, R.id.radio_easy);
+//                            mDifficulty = ContextCompat.getDiff(MainActivity.this, mDifficultyId);
+//                            setButtonDiff();
+//                        }
+//                    }
+//                }
+//    })
 
     void fillGrid(Sudoku sudoku) {
         int btnInt = 0;
