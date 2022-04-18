@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -10,20 +10,23 @@
         android:id="@+id/gl"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="10dp"
         android:background="@drawable/background_grid"
-        android:columnCount="9"
         android:paddingLeft="9dp"
         android:paddingTop="9dp"
         android:paddingRight="9dp"
         android:paddingBottom="9dp"
-        android:rowCount="9">
+        android:columnCount="9"
+        android:rowCount="9"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/chronometer">
 
         <EditText
             android:id="@+id/btn1"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_row="0"
             android:layout_column="0"
             android:layout_gravity="center"
@@ -40,8 +43,8 @@
 
         <EditText
             android:id="@+id/btn2"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_row="0"
             android:layout_column="1"
             android:layout_gravity="center"
@@ -58,8 +61,8 @@
 
         <EditText
             android:id="@+id/btn3"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_row="0"
             android:layout_column="2"
             android:layout_gravity="center"
@@ -77,8 +80,8 @@
 
         <EditText
             android:id="@+id/btn4"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_row="0"
             android:layout_column="3"
             android:layout_gravity="center"
@@ -95,8 +98,8 @@
 
         <EditText
             android:id="@+id/btn5"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_row="0"
             android:layout_column="4"
             android:layout_gravity="center"
@@ -113,8 +116,8 @@
 
         <EditText
             android:id="@+id/btn6"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_row="0"
             android:layout_column="5"
             android:layout_gravity="center"
@@ -132,8 +135,8 @@
 
         <EditText
             android:id="@+id/btn7"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_row="0"
             android:layout_column="6"
             android:layout_gravity="center"
@@ -150,8 +153,8 @@
 
         <EditText
             android:id="@+id/btn8"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_row="0"
             android:layout_column="7"
             android:layout_gravity="center"
@@ -168,8 +171,8 @@
 
         <EditText
             android:id="@+id/btn9"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_row="0"
             android:layout_column="8"
             android:layout_gravity="center"
@@ -186,8 +189,8 @@
 
         <EditText
             android:id="@+id/btn10"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_row="1"
             android:layout_column="0"
             android:layout_gravity="center"
@@ -204,8 +207,8 @@
 
         <EditText
             android:id="@+id/btn11"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_row="1"
             android:layout_column="1"
             android:layout_gravity="center"
@@ -222,8 +225,8 @@
 
         <EditText
             android:id="@+id/btn12"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_row="1"
             android:layout_column="2"
             android:layout_gravity="center"
@@ -241,8 +244,8 @@
 
         <EditText
             android:id="@+id/btn13"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_row="1"
             android:layout_column="3"
             android:layout_gravity="center"
@@ -259,8 +262,8 @@
 
         <EditText
             android:id="@+id/btn14"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_row="1"
             android:layout_column="4"
             android:layout_gravity="center"
@@ -277,8 +280,8 @@
 
         <EditText
             android:id="@+id/btn15"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_row="1"
             android:layout_column="5"
             android:layout_gravity="center"
@@ -296,8 +299,8 @@
 
         <EditText
             android:id="@+id/btn16"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_row="1"
             android:layout_column="6"
             android:layout_gravity="center"
@@ -314,8 +317,8 @@
 
         <EditText
             android:id="@+id/btn17"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_row="1"
             android:layout_column="7"
             android:layout_gravity="center"
@@ -332,8 +335,8 @@
 
         <EditText
             android:id="@+id/btn18"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_row="1"
             android:layout_column="8"
             android:layout_gravity="center"
@@ -350,8 +353,8 @@
 
         <EditText
             android:id="@+id/btn19"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_row="2"
             android:layout_column="0"
             android:layout_gravity="center"
@@ -369,8 +372,8 @@
 
         <EditText
             android:id="@+id/btn20"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_row="2"
             android:layout_column="1"
             android:layout_gravity="center"
@@ -388,8 +391,8 @@
 
         <EditText
             android:id="@+id/btn21"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_row="2"
             android:layout_column="2"
             android:layout_gravity="center"
@@ -408,8 +411,8 @@
 
         <EditText
             android:id="@+id/btn22"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_row="2"
             android:layout_column="3"
             android:layout_gravity="center"
@@ -427,8 +430,8 @@
 
         <EditText
             android:id="@+id/btn23"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_row="2"
             android:layout_column="4"
             android:layout_gravity="center"
@@ -446,8 +449,8 @@
 
         <EditText
             android:id="@+id/btn24"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_row="2"
             android:layout_column="5"
             android:layout_gravity="center"
@@ -466,8 +469,8 @@
 
         <EditText
             android:id="@+id/btn25"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_row="2"
             android:layout_column="6"
             android:layout_gravity="center"
@@ -485,8 +488,8 @@
 
         <EditText
             android:id="@+id/btn26"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_row="2"
             android:layout_column="7"
             android:layout_gravity="center"
@@ -504,8 +507,8 @@
 
         <EditText
             android:id="@+id/btn27"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_row="2"
             android:layout_column="8"
             android:layout_gravity="center"
@@ -523,8 +526,8 @@
 
         <EditText
             android:id="@+id/btn28"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_row="3"
             android:layout_column="0"
             android:layout_gravity="center"
@@ -541,8 +544,8 @@
 
         <EditText
             android:id="@+id/btn29"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_row="3"
             android:layout_column="1"
             android:layout_gravity="center"
@@ -559,8 +562,8 @@
 
         <EditText
             android:id="@+id/btn30"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_row="3"
             android:layout_column="2"
             android:layout_gravity="center"
@@ -578,8 +581,8 @@
 
         <EditText
             android:id="@+id/btn31"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_row="3"
             android:layout_column="3"
             android:layout_gravity="center"
@@ -596,8 +599,8 @@
 
         <EditText
             android:id="@+id/btn32"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_row="3"
             android:layout_column="4"
             android:layout_gravity="center"
@@ -614,8 +617,8 @@
 
         <EditText
             android:id="@+id/btn33"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_row="3"
             android:layout_column="5"
             android:layout_gravity="center"
@@ -633,8 +636,8 @@
 
         <EditText
             android:id="@+id/btn34"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_row="3"
             android:layout_column="6"
             android:layout_gravity="center"
@@ -651,8 +654,8 @@
 
         <EditText
             android:id="@+id/btn35"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_row="3"
             android:layout_column="7"
             android:layout_gravity="center"
@@ -669,8 +672,8 @@
 
         <EditText
             android:id="@+id/btn36"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_row="3"
             android:layout_column="8"
             android:layout_gravity="center"
@@ -687,8 +690,8 @@
 
         <EditText
             android:id="@+id/btn37"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_row="4"
             android:layout_column="0"
             android:layout_gravity="center"
@@ -705,8 +708,8 @@
 
         <EditText
             android:id="@+id/btn38"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_row="4"
             android:layout_column="1"
             android:layout_gravity="center"
@@ -723,8 +726,8 @@
 
         <EditText
             android:id="@+id/btn39"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_row="4"
             android:layout_column="2"
             android:layout_gravity="center"
@@ -742,8 +745,8 @@
 
         <EditText
             android:id="@+id/btn40"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_row="4"
             android:layout_column="3"
             android:layout_gravity="center"
@@ -760,8 +763,8 @@
 
         <EditText
             android:id="@+id/btn41"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_row="4"
             android:layout_column="4"
             android:layout_gravity="center"
@@ -778,8 +781,8 @@
 
         <EditText
             android:id="@+id/btn42"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_row="4"
             android:layout_column="5"
             android:layout_gravity="center"
@@ -797,8 +800,8 @@
 
         <EditText
             android:id="@+id/btn43"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_row="4"
             android:layout_column="6"
             android:layout_gravity="center"
@@ -815,8 +818,8 @@
 
         <EditText
             android:id="@+id/btn44"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_row="4"
             android:layout_column="7"
             android:layout_gravity="center"
@@ -833,8 +836,8 @@
 
         <EditText
             android:id="@+id/btn45"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_row="4"
             android:layout_column="8"
             android:layout_gravity="center"
@@ -851,8 +854,8 @@
 
         <EditText
             android:id="@+id/btn46"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_row="5"
             android:layout_column="0"
             android:layout_gravity="center"
@@ -870,8 +873,8 @@
 
         <EditText
             android:id="@+id/btn47"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_row="5"
             android:layout_column="1"
             android:layout_gravity="center"
@@ -889,8 +892,8 @@
 
         <EditText
             android:id="@+id/btn48"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_row="5"
             android:layout_column="2"
             android:layout_gravity="center"
@@ -909,8 +912,8 @@
 
         <EditText
             android:id="@+id/btn49"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_row="5"
             android:layout_column="3"
             android:layout_gravity="center"
@@ -928,8 +931,8 @@
 
         <EditText
             android:id="@+id/btn50"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_row="5"
             android:layout_column="4"
             android:layout_gravity="center"
@@ -947,8 +950,8 @@
 
         <EditText
             android:id="@+id/btn51"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_row="5"
             android:layout_column="5"
             android:layout_gravity="center"
@@ -967,8 +970,8 @@
 
         <EditText
             android:id="@+id/btn52"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_row="5"
             android:layout_column="6"
             android:layout_gravity="center"
@@ -986,8 +989,8 @@
 
         <EditText
             android:id="@+id/btn53"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_row="5"
             android:layout_column="7"
             android:layout_gravity="center"
@@ -1005,8 +1008,8 @@
 
         <EditText
             android:id="@+id/btn54"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_row="5"
             android:layout_column="8"
             android:layout_gravity="center"
@@ -1024,8 +1027,8 @@
 
         <EditText
             android:id="@+id/btn55"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_row="6"
             android:layout_column="0"
             android:layout_gravity="center"
@@ -1042,8 +1045,8 @@
 
         <EditText
             android:id="@+id/btn56"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_row="6"
             android:layout_column="1"
             android:layout_gravity="center"
@@ -1060,8 +1063,8 @@
 
         <EditText
             android:id="@+id/btn57"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_row="6"
             android:layout_column="2"
             android:layout_gravity="center"
@@ -1079,8 +1082,8 @@
 
         <EditText
             android:id="@+id/btn58"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_row="6"
             android:layout_column="3"
             android:layout_gravity="center"
@@ -1097,8 +1100,8 @@
 
         <EditText
             android:id="@+id/btn59"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_row="6"
             android:layout_column="4"
             android:layout_gravity="center"
@@ -1115,8 +1118,8 @@
 
         <EditText
             android:id="@+id/btn60"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_row="6"
             android:layout_column="5"
             android:layout_gravity="center"
@@ -1134,8 +1137,8 @@
 
         <EditText
             android:id="@+id/btn61"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_row="6"
             android:layout_column="6"
             android:layout_gravity="center"
@@ -1152,8 +1155,8 @@
 
         <EditText
             android:id="@+id/btn62"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_row="6"
             android:layout_column="7"
             android:layout_gravity="center"
@@ -1170,8 +1173,8 @@
 
         <EditText
             android:id="@+id/btn63"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_row="6"
             android:layout_column="8"
             android:layout_gravity="center"
@@ -1188,8 +1191,8 @@
 
         <EditText
             android:id="@+id/btn64"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_row="7"
             android:layout_column="0"
             android:layout_gravity="center"
@@ -1206,8 +1209,8 @@
 
         <EditText
             android:id="@+id/btn65"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_row="7"
             android:layout_column="1"
             android:layout_gravity="center"
@@ -1224,8 +1227,8 @@
 
         <EditText
             android:id="@+id/btn66"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_row="7"
             android:layout_column="2"
             android:layout_gravity="center"
@@ -1243,8 +1246,8 @@
 
         <EditText
             android:id="@+id/btn67"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_row="7"
             android:layout_column="3"
             android:layout_gravity="center"
@@ -1261,8 +1264,8 @@
 
         <EditText
             android:id="@+id/btn68"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_row="7"
             android:layout_column="4"
             android:layout_gravity="center"
@@ -1279,8 +1282,8 @@
 
         <EditText
             android:id="@+id/btn69"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_row="7"
             android:layout_column="5"
             android:layout_gravity="center"
@@ -1298,8 +1301,8 @@
 
         <EditText
             android:id="@+id/btn70"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_row="7"
             android:layout_column="6"
             android:layout_gravity="center"
@@ -1316,8 +1319,8 @@
 
         <EditText
             android:id="@+id/btn71"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_row="7"
             android:layout_column="7"
             android:layout_gravity="center"
@@ -1334,8 +1337,8 @@
 
         <EditText
             android:id="@+id/btn72"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_row="7"
             android:layout_column="8"
             android:layout_gravity="center"
@@ -1352,8 +1355,8 @@
 
         <EditText
             android:id="@+id/btn73"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_row="8"
             android:layout_column="0"
             android:layout_gravity="center"
@@ -1370,8 +1373,8 @@
 
         <EditText
             android:id="@+id/btn74"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_row="8"
             android:layout_column="1"
             android:layout_gravity="center"
@@ -1388,8 +1391,8 @@
 
         <EditText
             android:id="@+id/btn75"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_row="8"
             android:layout_column="2"
             android:layout_gravity="center"
@@ -1407,8 +1410,8 @@
 
         <EditText
             android:id="@+id/btn76"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_row="8"
             android:layout_column="3"
             android:layout_gravity="center"
@@ -1425,8 +1428,8 @@
 
         <EditText
             android:id="@+id/btn77"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_row="8"
             android:layout_column="4"
             android:layout_gravity="center"
@@ -1443,8 +1446,8 @@
 
         <EditText
             android:id="@+id/btn78"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_row="8"
             android:layout_column="5"
             android:layout_gravity="center"
@@ -1462,8 +1465,8 @@
 
         <EditText
             android:id="@+id/btn79"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_row="8"
             android:layout_column="6"
             android:layout_gravity="center"
@@ -1480,8 +1483,8 @@
 
         <EditText
             android:id="@+id/btn80"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_row="8"
             android:layout_column="7"
             android:layout_gravity="center"
@@ -1498,8 +1501,8 @@
 
         <EditText
             android:id="@+id/btn81"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_row="8"
             android:layout_column="8"
             android:layout_gravity="center"
@@ -1516,79 +1519,67 @@
 
     </GridLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
+    <Chronometer
+        android:id="@+id/chronometer"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/border"
+        android:fontFamily="serif-monospace"
+        android:padding="10dp"
+        android:textColor="@color/cyan"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/checkBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gl"/>
+
+    <Button
+        android:id="@+id/checkBtn"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/border"
+        android:fontFamily="serif-monospace"
+        android:text="@string/gameCheck"
+        android:textColor="@color/cyan"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@+id/chronometer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/diffBtn"/>
+
+    <Button
+        android:id="@+id/diffBtn"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/border"
+        android:fontFamily="serif-monospace"
+        android:text="@string/setDiff"
+        android:textColor="@color/cyan"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/condition"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkBtn" />
+
+    <TextView
+        android:id="@+id/condition"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="485dp"
-        android:gravity="center">
-
-        <Button
-            android:id="@+id/checkBtn"
-            android:layout_width="200dp"
-            android:layout_height="50dp"
-            android:background="@drawable/border"
-            android:fontFamily="serif-monospace"
-            android:text="@string/gameCheck"
-            android:textColor="@color/cyan"
-            android:textSize="40sp"
-            android:textStyle="bold" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="540dp"
-        android:gravity="center">
-
-        <Button
-            android:id="@+id/diffBtn"
-            android:layout_width="200dp"
-            android:layout_height="50dp"
-            android:background="@drawable/border"
-            android:fontFamily="serif-monospace"
-            android:text="@string/setDiff"
-            android:textColor="@color/cyan"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="600dp"
-        android:gravity="center">
-
-        <TextView
-            android:id="@+id/condition"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="serif-monospace"
-            android:textColor="@color/cyan"
-            android:textSize="25sp"
-            android:textStyle="bold" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="430dp"
-        android:gravity="center">
-
-        <Chronometer
-            android:id="@+id/chronometer"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:background="@drawable/border"
-            android:fontFamily="serif-monospace"
-            android:padding="10dp"
-            android:textColor="@color/cyan"
-            android:textSize="25sp"
-            android:textStyle="bold" />
-
-    </LinearLayout>
+        android:layout_marginTop="10dp"
+        android:fontFamily="serif-monospace"
+        android:textColor="@color/cyan"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/diffBtn" />
 
 
-</RelativeLayout>
+</android.support.constraint.ConstraintLayout>

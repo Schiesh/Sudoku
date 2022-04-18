@@ -9,7 +9,7 @@
     </item>
 
 
-    <item android:bottom="130dp">
+    <item android:bottom="115dp">
         <shape
             android:shape="line">
             <stroke android:width="4dp"/>
@@ -17,7 +17,7 @@
     </item>
 
 
-    <item android:bottom="-130dp">
+    <item android:bottom="-115dp">
         <shape
             android:shape="line">
             <stroke android:width="4dp"/>
@@ -25,7 +25,7 @@
     </item>
 
 
-    <item android:left="-130dp">
+    <item android:left="-115dp">
         <rotate
             android:fromDegrees="90"
             android:toDegrees="90"
@@ -40,7 +40,7 @@
     </item>
 
 
-    <item android:right="-130dp">
+    <item android:right="-115dp">
         <rotate
             android:fromDegrees="90"
             android:toDegrees="90"
