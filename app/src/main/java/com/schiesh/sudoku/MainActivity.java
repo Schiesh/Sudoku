@@ -1,11 +1,9 @@
 package com.schiesh.sudoku;
 
-import android.app.Activity;
-import android.app.Instrumentation;
 import android.content.Intent;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Chronometer;
@@ -29,12 +27,8 @@ public class MainActivity extends AppCompatActivity {
             R.id.btn79, R.id.btn80, R.id.btn81
     };
 
-    int easy = 45;
-    int medium = 50;
-    int hard = 55;
-    int difficulty = 10;
+    int default_difficulty = 45;
     int tries = 0;
-//    private int mDifficultyId;
     final int[][] sudokuFin = new int[9][9];
     final int[][] sudokuSol = new int[9][9];
     Chronometer chronometer;
@@ -43,8 +37,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-//        mDifficultyId = R.id.radio_easy;
-        Sudoku sudoku = new Sudoku(9, difficulty);
+        Sudoku sudoku = new Sudoku(9, default_difficulty);
         sudoku.fillValues();
         copy(sudoku, sudokuSol);
         sudoku.removeKDigits();
@@ -52,6 +45,53 @@ public class MainActivity extends AppCompatActivity {
         print2DArray(sudokuSol);
         chronometer = findViewById(R.id.chronometer);
         chronometer.start();
+
+
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            String value = extras.getString("message");
+
+            if(value.equals("easy")){
+                Log.v("EASY", "EASY");
+                String value2 = extras.getString("message");
+
+                Sudoku sudoku3 = new Sudoku(9, 45);
+
+                sudoku3.fillValues();
+                copy(sudoku3, sudokuSol);
+                sudoku3.removeKDigits();
+                fillGrid(sudoku3);
+                print2DArray(sudokuSol);
+                Log.v("HELLOvvvvv", value);
+            }
+            if(value.equals("medium")){
+                Log.v("medium", "medium");
+                String value3 = extras.getString("message");
+
+                Sudoku sudoku4 = new Sudoku(9, 50);
+
+                sudoku4.fillValues();
+                copy(sudoku4, sudokuSol);
+                sudoku4.removeKDigits();
+                fillGrid(sudoku4);
+                print2DArray(sudokuSol);
+                Log.v("HELLOvvvvv", value);
+            }
+            if(value.equals("hard")){
+                Log.v("hard", "hard");
+                String value4 = extras.getString("message");
+
+                Sudoku sudoku5 = new Sudoku(9, 55);
+
+                sudoku5.fillValues();
+                copy(sudoku5, sudokuSol);
+                sudoku5.removeKDigits();
+                fillGrid(sudoku5);
+                print2DArray(sudokuSol);
+                Log.v("HELLOvvvvv", value);
+            }
+
+        }
 
         final Button checkBtn = findViewById(R.id.checkBtn);
         checkBtn.setOnClickListener(new View.OnClickListener() {
@@ -97,31 +137,20 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        final Button difficulty = findViewById(R.id.diffBtn);
+        difficulty.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View v) {
+                switchActivities();
+            }
+        });
+
     }
 
-//    public void onChangeDiffClick(View view) {
-//        // Send the current difficulty ID to GameDifficultyActivity
-//        Intent intent = new Intent(this, GameDifficulty.class);
-//        intent.putExtra(GameDifficulty.EXTRA_DIFF, mDifficultyId);
-//        mDiffResultLauncher.launch(intent);
-//    }
-//
-//    private final ActivityResultLauncher<Intent> mDiffResultLauncher = registerForActivityResult(
-//            new ActivityResultContracts.StartActivityForResult(),
-//            new ActivityREsultCallback<Instrumentation.ActivityResult>() {
-//                @Override
-//                public void onActivityResult(Instrumentation.ActivityResult result) {
-//                    if (result.getResultCode() == Activity.RESULT_OK) {
-//                        Intent data = result.getData();
-//                        if (data != null) {
-//                            // Create the "on" button diff from the chosen diff ID from GameDifficulty Activity
-//                            mDifficultyId = data.getIntExtra(GameDifficulty.EXTRA_DIFF, R.id.radio_easy);
-//                            mDifficulty = ContextCompat.getDiff(MainActivity.this, mDifficultyId);
-//                            setButtonDiff();
-//                        }
-//                    }
-//                }
-//    })
+    private void switchActivities() {
+        Intent switchActivityIntent = new Intent(this, GameDifficulty.class);
+        startActivity(switchActivityIntent);
+    }
 
     void fillGrid(Sudoku sudoku) {
         int btnInt = 0;
