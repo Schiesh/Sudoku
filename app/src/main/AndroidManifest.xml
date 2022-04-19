@@ -10,9 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Sudoku">
         <activity
+            android:name=".Color"
+            android:exported="false" />
+        <activity
             android:name=".GameDifficulty"
             android:exported="false"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".MainActivity"
             android:exported="true"

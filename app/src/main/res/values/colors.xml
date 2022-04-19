@@ -5,6 +5,19 @@
     <color name="purple_700">#FF3700B3</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
+
+
+    <color name="blue">#599eff</color>
+    <color name="purple">#6a5acd</color>
+    <color name="pink">#ff7a91</color>
+    <color name="orange">#da5810</color>
+    <color name="green">#3cb371</color>
+    <color name="light_green">#b1d68c</color>
+    <color name="yellow">#ffe471</color>
+    <color name="raspberry">#e36ab5</color>
+
+
+
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="cyan">#00FFFF</color>
