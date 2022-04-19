@@ -3,7 +3,6 @@ package com.schiesh.sudoku;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Chronometer;
@@ -52,7 +51,6 @@ public class MainActivity extends AppCompatActivity {
             String value = extras.getString("message");
 
             if(value.equals("easy")){
-                Log.v("EASY", "EASY");
                 String value2 = extras.getString("message");
 
                 Sudoku sudoku3 = new Sudoku(9, 45);
@@ -62,10 +60,8 @@ public class MainActivity extends AppCompatActivity {
                 sudoku3.removeKDigits();
                 fillGrid(sudoku3);
                 print2DArray(sudokuSol);
-                Log.v("HELLOvvvvv", value);
             }
             if(value.equals("medium")){
-                Log.v("medium", "medium");
                 String value3 = extras.getString("message");
 
                 Sudoku sudoku4 = new Sudoku(9, 50);
@@ -75,10 +71,8 @@ public class MainActivity extends AppCompatActivity {
                 sudoku4.removeKDigits();
                 fillGrid(sudoku4);
                 print2DArray(sudokuSol);
-                Log.v("HELLOvvvvv", value);
             }
             if(value.equals("hard")){
-                Log.v("hard", "hard");
                 String value4 = extras.getString("message");
 
                 Sudoku sudoku5 = new Sudoku(9, 55);
@@ -88,7 +82,6 @@ public class MainActivity extends AppCompatActivity {
                 sudoku5.removeKDigits();
                 fillGrid(sudoku5);
                 print2DArray(sudokuSol);
-                Log.v("HELLOvvvvv", value);
             }
 
         }
