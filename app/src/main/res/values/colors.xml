@@ -16,7 +16,8 @@
     <color name="yellow">#ffe471</color>
     <color name="raspberry">#e36ab5</color>
 
-
+    <color name="dark_gray">#4b4b4b</color>
+    <color name="Icon_purple">#5C5DE9</color>
 
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
