@@ -42,7 +42,8 @@ public class Color extends AppCompatActivity {
         radio.setChecked(true);
 
     }
-    public void onColorButtonSelected(View view) {
+
+    public void onColorButtonClicked(View view) {
         int colorId = R.color.gray;
         if (view.getId() == R.id.radio_pink) {
             colorId = R.color.pink;
