@@ -1,6 +1,10 @@
 package com.schiesh.sudoku;
 
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.GradientDrawable;
+import android.graphics.drawable.ShapeDrawable;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -31,6 +35,9 @@ public class MainActivity extends AppCompatActivity {
     final int[][] sudokuFin = new int[9][9];
     final int[][] sudokuSol = new int[9][9];
     Chronometer chronometer;
+   // Drawable drawable = getDrawable(R.drawable.border);
+    //ShapeDrawable shapeDrawable = (ShapeDrawable) getDrawable(R.drawable.border);
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,6 +91,51 @@ public class MainActivity extends AppCompatActivity {
                 print2DArray(sudokuSol);
             }
 
+            //change the color
+            //GradientDrawable gradientDrawable = (GradientDrawable) drawable;
+
+                if (value.equals(R.color.pink)) {
+                   // gradientDrawable.setColor(ContextCompat.getColor(this,R.color.pink));
+                    //shapeDrawable.getPaint().setColor(Color.parseColor(R.color.pink));
+
+                }
+                if (value.equals(R.color.orange)) {
+                   // gradientDrawable.setColor(ContextCompat.getColor(this,R.color.orange));
+                    //shapeDrawable.getPaint().setColor(Color.parseColor(R.color.orange));
+
+                }
+                if (value.equals(R.color.green)) {
+                   // gradientDrawable.setColor(ContextCompat.getColor(this,R.color.green));
+                    //shapeDrawable.getPaint().setColor(Color.parseColor(R.color.green));
+
+                }
+                if (value.equals(R.color.blue)) {
+                   // gradientDrawable.setColor(ContextCompat.getColor(this,R.color.blue));
+                    //shapeDrawable.getPaint().setColor(Color.parseColor(R.color.blue));
+
+                }
+                if (value.equals(R.color.purple)) {
+                    //gradientDrawable.setColor(ContextCompat.getColor(this,R.color.purple));
+                    //shapeDrawable.getPaint().setColor(Color.parseColor(R.color.purple));
+
+                }
+                if (value.equals(R.color.light_green)) {
+                   // gradientDrawable.setColor(ContextCompat.getColor(this,R.color.light_green));
+                    //shapeDrawable.getPaint().setColor(Color.parseColor(R.color.light_green));
+
+                }
+                if (value.equals(R.color.yellow)) {
+                   // gradientDrawable.setColor(ContextCompat.getColor(this,R.color.yellow));
+                    //shapeDrawable.getPaint().setColor(Color.parseColor(R.color.yellow));
+
+                }
+                if (value.equals(R.color.raspberry)) {
+                    //gradientDrawable.setColor(ContextCompat.getColor(this,R.color.raspberry));
+                    //shapeDrawable.getPaint().setColor(Color.parseColor(R.color.raspberry));
+
+                }
+
+
         }
 
         final Button checkBtn = findViewById(R.id.checkBtn);
@@ -135,6 +187,14 @@ public class MainActivity extends AppCompatActivity {
 
             public void onClick(View v) {
                 switchActivities();
+            }
+        });
+
+        final Button colorChange = findViewById(R.id.colorBtn);
+        colorChange.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View v) {
+                onChangeColorClick();
             }
         });
 
@@ -203,6 +263,11 @@ public class MainActivity extends AppCompatActivity {
             System.out.println();
         }
         System.out.println();
+    }
+
+    public void onChangeColorClick() {
+        Intent switchColorIntent = new Intent(this, Color.class);
+        startActivity(switchColorIntent);
     }
 }
 

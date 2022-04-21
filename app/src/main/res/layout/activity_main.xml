@@ -662,7 +662,6 @@
     <Button
         android:id="@+id/colorBtn"
         android:text="@string/choose_color"
-        android:onClick="onChangeColorClick"
         app:layout_constraintBottom_toTopOf="@+id/condition"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
