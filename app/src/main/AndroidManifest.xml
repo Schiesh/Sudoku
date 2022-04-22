@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Sudoku">
         <activity
-            android:name=".Color"
+            android:name=".ColorChange"
             android:exported="false" />
         <activity
             android:name=".GameDifficulty"

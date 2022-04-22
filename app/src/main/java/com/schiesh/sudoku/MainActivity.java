@@ -1,6 +1,7 @@
 package com.schiesh.sudoku;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
 import android.graphics.drawable.ShapeDrawable;
@@ -11,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Chronometer;
 import android.widget.EditText;
+import android.widget.GridLayout;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -36,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
     final int[][] sudokuSol = new int[9][9];
     Chronometer chronometer;
    // Drawable drawable = getDrawable(R.drawable.border);
-    //ShapeDrawable shapeDrawable = (ShapeDrawable) getDrawable(R.drawable.border);
+    //ShapeDrawable shapeDrawable;
 
 
     @Override
@@ -51,6 +53,11 @@ public class MainActivity extends AppCompatActivity {
         print2DArray(sudokuSol);
         chronometer = findViewById(R.id.chronometer);
         chronometer.start();
+        //shapeDrawable = (ShapeDrawable) getDrawable(R.drawable.border);
+        Drawable drawable = getDrawable(R.drawable.border);
+        GradientDrawable gradientDrawable = (GradientDrawable) drawable ;
+
+
 
 
         Bundle extras = getIntent().getExtras();
@@ -92,48 +99,58 @@ public class MainActivity extends AppCompatActivity {
             }
 
             //change the color
-            //GradientDrawable gradientDrawable = (GradientDrawable) drawable;
+            //GridLayout gd = gl;
+            //GradientDrawable gradientDrawable = (GradientDrawable) ;
+           // shapeDrawable = (ShapeDrawable) getDrawable(R.drawable.border);
+            if (value.equals("pink")) {
+                String value5 = extras.getString("message");
+                gradientDrawable.setColor(ContextCompat.getColor(this,R.color.pink));
+                // shapeDrawable.getPaint().setColor(Color.parseColor("R.color.pink"));
 
-                if (value.equals(R.color.pink)) {
-                   // gradientDrawable.setColor(ContextCompat.getColor(this,R.color.pink));
-                    //shapeDrawable.getPaint().setColor(Color.parseColor(R.color.pink));
+            }
+            if (value.equals("orange")) {
+                String value6 = extras.getString("message");
+                gradientDrawable.setColor(ContextCompat.getColor(this,R.color.orange));
+                //shapeDrawable.getPaint().setColor(Color.parseColor("R.color.orange"));
 
-                }
-                if (value.equals(R.color.orange)) {
-                   // gradientDrawable.setColor(ContextCompat.getColor(this,R.color.orange));
-                    //shapeDrawable.getPaint().setColor(Color.parseColor(R.color.orange));
+            }
+            if (value.equals("green")) {
+                String value7 = extras.getString("message");
+                  gradientDrawable.setColor(ContextCompat.getColor(this,R.color.green));
+                // shapeDrawable.getPaint().setColor(Color.parseColor("R.color.green"));
 
-                }
-                if (value.equals(R.color.green)) {
-                   // gradientDrawable.setColor(ContextCompat.getColor(this,R.color.green));
-                    //shapeDrawable.getPaint().setColor(Color.parseColor(R.color.green));
+            }
+            if (value.equals("blue")) {
+                String value8 = extras.getString("message");
+               gradientDrawable.setColor(ContextCompat.getColor(this,R.color.blue));
+                //shapeDrawable.getPaint().setColor(Color.parseColor("R.color.blue"));
 
-                }
-                if (value.equals(R.color.blue)) {
-                   // gradientDrawable.setColor(ContextCompat.getColor(this,R.color.blue));
-                    //shapeDrawable.getPaint().setColor(Color.parseColor(R.color.blue));
+            }
+            if (value.equals("purple")) {
+                String value9 = extras.getString("message");
+                 gradientDrawable.setColor(ContextCompat.getColor(this,R.color.purple));
+                //shapeDrawable.getPaint().setColor(Color.parseColor("R.color.purple"));
 
-                }
-                if (value.equals(R.color.purple)) {
-                    //gradientDrawable.setColor(ContextCompat.getColor(this,R.color.purple));
-                    //shapeDrawable.getPaint().setColor(Color.parseColor(R.color.purple));
+            }
+            if (value.equals("light_green")) {
+                String value10 = extras.getString("message");
+                gradientDrawable.setColor(ContextCompat.getColor(this,R.color.light_green));
+                // shapeDrawable.getPaint().setColor(Color.parseColor("R.color.light_green"));
 
-                }
-                if (value.equals(R.color.light_green)) {
-                   // gradientDrawable.setColor(ContextCompat.getColor(this,R.color.light_green));
-                    //shapeDrawable.getPaint().setColor(Color.parseColor(R.color.light_green));
+            }
+            if (value.equals("yellow")) {
+               String value11 = extras.getString("message");
+                  gradientDrawable.setColor(ContextCompat.getColor(this,R.color.yellow));
+                //shapeDrawable.getPaint().setColor(Color.parseColor("R.color.yellow"));
 
-                }
-                if (value.equals(R.color.yellow)) {
-                   // gradientDrawable.setColor(ContextCompat.getColor(this,R.color.yellow));
-                    //shapeDrawable.getPaint().setColor(Color.parseColor(R.color.yellow));
+            }
+            if (value.equals("raspberry")) {
+                String value12 = extras.getString("message");
+                gradientDrawable.setColor(ContextCompat.getColor(this,R.color.raspberry));
+                //shapeDrawable.getPaint().setColor(Color.parseColor("R.color.raspberry"));
 
-                }
-                if (value.equals(R.color.raspberry)) {
-                    //gradientDrawable.setColor(ContextCompat.getColor(this,R.color.raspberry));
-                    //shapeDrawable.getPaint().setColor(Color.parseColor(R.color.raspberry));
+            }
 
-                }
 
 
         }
@@ -266,7 +283,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onChangeColorClick() {
-        Intent switchColorIntent = new Intent(this, Color.class);
+        Intent switchColorIntent = new Intent(this, ColorChange.class);
         startActivity(switchColorIntent);
     }
 }
