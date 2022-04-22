@@ -1,10 +1,8 @@
 package com.schiesh.sudoku;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
-import android.graphics.drawable.ShapeDrawable;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -12,7 +10,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Chronometer;
 import android.widget.EditText;
-import android.widget.GridLayout;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -39,26 +36,26 @@ public class MainActivity extends AppCompatActivity {
     Chronometer chronometer;
    // Drawable drawable = getDrawable(R.drawable.border);
     //ShapeDrawable shapeDrawable;
-
+    int diff = 45;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         Sudoku sudoku = new Sudoku(9, default_difficulty);
         sudoku.fillValues();
         copy(sudoku, sudokuSol);
         sudoku.removeKDigits();
         fillGrid(sudoku);
         print2DArray(sudokuSol);
+
         chronometer = findViewById(R.id.chronometer);
         chronometer.start();
-        //shapeDrawable = (ShapeDrawable) getDrawable(R.drawable.border);
+
         Drawable drawable = getDrawable(R.drawable.border);
         GradientDrawable gradientDrawable = (GradientDrawable) drawable ;
-
-
 
 
         Bundle extras = getIntent().getExtras();
@@ -70,6 +67,7 @@ public class MainActivity extends AppCompatActivity {
                 String value2 = extras.getString("message");
 
                 Sudoku sudoku3 = new Sudoku(9, 45);
+                diff = 45;
 
                 sudoku3.fillValues();
                 copy(sudoku3, sudokuSol);
@@ -81,6 +79,7 @@ public class MainActivity extends AppCompatActivity {
                 String value3 = extras.getString("message");
 
                 Sudoku sudoku4 = new Sudoku(9, 50);
+                diff = 50;
 
                 sudoku4.fillValues();
                 copy(sudoku4, sudokuSol);
@@ -92,6 +91,7 @@ public class MainActivity extends AppCompatActivity {
                 String value4 = extras.getString("message");
 
                 Sudoku sudoku5 = new Sudoku(9, 55);
+                diff = 55;
 
                 sudoku5.fillValues();
                 copy(sudoku5, sudokuSol);
@@ -101,67 +101,105 @@ public class MainActivity extends AppCompatActivity {
             }
 
             //change the color
-            //GridLayout gd = gl;
-            //GradientDrawable gradientDrawable = (GradientDrawable) ;
-           // shapeDrawable = (ShapeDrawable) getDrawable(R.drawable.border);
+
             if (value.equals("pink")) {
                 String value5 = extras.getString("message");
                 gradientDrawable.setColor(ContextCompat.getColor(this,R.color.pink));
-                // shapeDrawable.getPaint().setColor(Color.parseColor("R.color.pink"));
+                 Sudoku sudoku5 = new Sudoku(9, diff);
+                                sudoku5.fillValues();
+                                copy(sudoku5, sudokuSol);
+                                sudoku5.removeKDigits();
+                                fillGrid(sudoku5);
+                                print2DArray(sudokuSol);
+
 
 
             }
             if (value.equals("orange")) {
                 String value6 = extras.getString("message");
                 gradientDrawable.setColor(ContextCompat.getColor(this,R.color.orange));
-                //shapeDrawable.getPaint().setColor(Color.parseColor("R.color.orange"));
+                 Sudoku sudoku5 = new Sudoku(9, diff);
+                               sudoku5.fillValues();
+                                copy(sudoku5, sudokuSol);
+                                sudoku5.removeKDigits();
+                                fillGrid(sudoku5);
+                                print2DArray(sudokuSol);
+
 
             }
             if (value.equals("green")) {
                 String value7 = extras.getString("message");
                   gradientDrawable.setColor(ContextCompat.getColor(this,R.color.green));
-                // shapeDrawable.getPaint().setColor(Color.parseColor("R.color.green"));
+                 Sudoku sudoku5 = new Sudoku(9, diff);
+                                sudoku5.fillValues();
+                                copy(sudoku5, sudokuSol);
+                                sudoku5.removeKDigits();
+                                fillGrid(sudoku5);
+                                print2DArray(sudokuSol);
 
             }
             if (value.equals("blue")) {
                 String value8 = extras.getString("message");
                gradientDrawable.setColor(ContextCompat.getColor(this,R.color.blue));
-                //shapeDrawable.getPaint().setColor(Color.parseColor("R.color.blue"));
+                 Sudoku sudoku5 = new Sudoku(9, diff);
+                                sudoku5.fillValues();
+                                copy(sudoku5, sudokuSol);
+                                sudoku5.removeKDigits();
+                                fillGrid(sudoku5);
+                                print2DArray(sudokuSol);
 
             }
             if (value.equals("purple")) {
                 String value9 = extras.getString("message");
                  gradientDrawable.setColor(ContextCompat.getColor(this,R.color.purple));
-                //shapeDrawable.getPaint().setColor(Color.parseColor("R.color.purple"));
+                 Sudoku sudoku5 = new Sudoku(9, diff);
+                                sudoku5.fillValues();
+                                copy(sudoku5, sudokuSol);
+                                sudoku5.removeKDigits();
+                                fillGrid(sudoku5);
+                                print2DArray(sudokuSol);
 
             }
             if (value.equals("light_green")) {
                 String value10 = extras.getString("message");
                 gradientDrawable.setColor(ContextCompat.getColor(this,R.color.light_green));
-                // shapeDrawable.getPaint().setColor(Color.parseColor("R.color.light_green"));
+                 Sudoku sudoku5 = new Sudoku(9, diff);
+                                sudoku5.fillValues();
+                                copy(sudoku5, sudokuSol);
+                                sudoku5.removeKDigits();
+                                fillGrid(sudoku5);
+                                print2DArray(sudokuSol);
 
             }
             if (value.equals("yellow")) {
                String value11 = extras.getString("message");
                   gradientDrawable.setColor(ContextCompat.getColor(this,R.color.yellow));
-                //shapeDrawable.getPaint().setColor(Color.parseColor("R.color.yellow"));
+                 Sudoku sudoku5 = new Sudoku(9, diff);
+                                sudoku5.fillValues();
+                                copy(sudoku5, sudokuSol);
+                                sudoku5.removeKDigits();
+                                fillGrid(sudoku5);
+                                print2DArray(sudokuSol);
 
             }
             if (value.equals("raspberry")) {
                 String value12 = extras.getString("message");
                 gradientDrawable.setColor(ContextCompat.getColor(this,R.color.raspberry));
-                //shapeDrawable.getPaint().setColor(Color.parseColor("R.color.raspberry"));
+                 Sudoku sudoku5 = new Sudoku(9, diff);
+                                                sudoku5.fillValues();
+                                                copy(sudoku5, sudokuSol);
+                                               sudoku5.removeKDigits();
+                                                fillGrid(sudoku5);
+                                                print2DArray(sudokuSol);
+
 
             }
-            Sudoku sudoku4 = new Sudoku(9, 50);
-
-            sudoku4.fillValues();
-            copy(sudoku4, sudokuSol);
-            sudoku4.removeKDigits();
-            fillGrid(sudoku4);
-            print2DArray(sudokuSol);
-
-
+        // Sudoku sudoku5 = new Sudoku(9, diff);
+           // sudoku5.fillValues();
+           // copy(sudoku5, sudokuSol);
+           // sudoku5.removeKDigits();
+           // fillGrid(sudoku5);
+           // print2DArray(sudokuSol);
         }
 
         final Button checkBtn = findViewById(R.id.checkBtn);
@@ -231,6 +269,10 @@ public class MainActivity extends AppCompatActivity {
         startActivity(switchActivityIntent);
     }
 
+    public void onChangeColorClick() {
+        Intent switchColorIntent = new Intent(this, ColorChange.class);
+        startActivity(switchColorIntent);
+    }
     void fillGrid(Sudoku sudoku) {
         int btnInt = 0;
         for (int i = 0; i<9; i++)
@@ -291,9 +333,6 @@ public class MainActivity extends AppCompatActivity {
         System.out.println();
     }
 
-    public void onChangeColorClick() {
-        Intent switchColorIntent = new Intent(this, ColorChange.class);
-        startActivity(switchColorIntent);
-    }
+
 }
 

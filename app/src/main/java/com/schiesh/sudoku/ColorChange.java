@@ -40,51 +40,59 @@ public class ColorChange extends AppCompatActivity {
         boolean checked = ((RadioButton) view).isChecked();
 
        // shapeDrawable = (ShapeDrawable) getDrawable(R.drawable.border);
-
-            if (view.getId() == R.id.radio_pink) {
+        switch(view.getId()) {
+            case R.id.radio_pink:
                 if(checked) {colorId = R.color.pink;
                 color = "pink";
                     //shapeDrawable.getPaint().setColor(Color.parseColor("R.color.pink"));
 
                     Log.v("pink", color);}
-            } else if (view.getId() == R.id.radio_orange) {
+                break;
+            case R.id.radio_orange:
                 if(checked) { colorId = R.color.orange;
                 color = "orange";
                     //shapeDrawable.getPaint().setColor(Color.parseColor("R.color.orange"));
 
                     Log.v("orange", color);}
-            } else if (view.getId() == R.id.radio_green) {
+                break;
+            case R.id.radio_green:
                 if(checked) { colorId = R.color.green;
                 color = "green";
                    // shapeDrawable.getPaint().setColor(Color.parseColor("R.color.green"));
 
                     Log.v("green", color);}
-            } else if (view.getId() == R.id.radio_blue) {
+                break;
+            case R.id.radio_blue:
                 if(checked) {colorId = R.color.blue;
                 color = "blue";
                    // shapeDrawable.getPaint().setColor(Color.parseColor("R.color.blue"));
 
                     Log.v("blue", color);}
-            } else if (view.getId() == R.id.radio_purple) {
+                break;
+            case R.id.radio_purple:
                 if(checked) { colorId = R.color.purple;
                 color = "purple";
                     //shapeDrawable.getPaint().setColor(Color.parseColor("R.color.purple"));
                     Log.v("purple", color);}
-            } else if (view.getId() == R.id.radio_light_green) {
+                break;
+            case R.id.radio_light_green:
                 if(checked) { colorId = R.color.light_green;
                 color = "light_green";
                     //shapeDrawable.getPaint().setColor(Color.parseColor("R.color.light_green"));
                     Log.v("light_green", color);}
-            } else if (view.getId() == R.id.radio_yellow) {
+                break;
+            case R.id.radio_yellow:
                 if(checked) { colorId = R.color.yellow;
                     color = "yellow";
                     //shapeDrawable.getPaint().setColor(Color.parseColor("R.color.yellow"));
                     Log.v("yellow", color);}
-            } else if (view.getId() == R.id.radio_raspberry) {
+                break;
+            case R.id.radio_raspberry:
                 if(checked) { colorId = R.color.raspberry;
                 color = "raspberry";
                     //shapeDrawable.getPaint().setColor(Color.parseColor("R.color.raspberry"));
                     Log.v("raspberry", color);}
+                break;
             }
 
 
