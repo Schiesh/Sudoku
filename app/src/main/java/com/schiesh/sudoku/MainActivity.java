@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
     Chronometer chronometer;
    // Drawable drawable = getDrawable(R.drawable.border);
     //ShapeDrawable shapeDrawable;
+    int diff = 45;
 
 
     @Override
@@ -64,38 +65,39 @@ public class MainActivity extends AppCompatActivity {
         if (extras != null) {
             String value = extras.getString("message");
 
+
             if(value.equals("easy")){
                 String value2 = extras.getString("message");
+                diff=45;
+                //Sudoku sudoku3 = new Sudoku(9, 45);
 
-                Sudoku sudoku3 = new Sudoku(9, 45);
-
-                sudoku3.fillValues();
-                copy(sudoku3, sudokuSol);
-                sudoku3.removeKDigits();
-                fillGrid(sudoku3);
-                print2DArray(sudokuSol);
+               // sudoku3.fillValues();
+               // copy(sudoku3, sudokuSol);
+               // sudoku3.removeKDigits();
+               // fillGrid(sudoku3);
+               // print2DArray(sudokuSol);
             }
             if(value.equals("medium")){
                 String value3 = extras.getString("message");
+                 diff = 50;
+                //Sudoku sudoku3 = new Sudoku(9, 50);
 
-                Sudoku sudoku4 = new Sudoku(9, 50);
-
-                sudoku4.fillValues();
-                copy(sudoku4, sudokuSol);
-                sudoku4.removeKDigits();
-                fillGrid(sudoku4);
-                print2DArray(sudokuSol);
+                // sudoku3.fillValues();
+                // copy(sudoku3, sudokuSol);
+                // sudoku3.removeKDigits();
+                // fillGrid(sudoku3);
+                // print2DArray(sudokuSol);
             }
             if(value.equals("hard")){
                 String value4 = extras.getString("message");
+                diff = 55;
+                //Sudoku sudoku3 = new Sudoku(9, 55);
 
-                Sudoku sudoku5 = new Sudoku(9, 55);
-
-                sudoku5.fillValues();
-                copy(sudoku5, sudokuSol);
-                sudoku5.removeKDigits();
-                fillGrid(sudoku5);
-                print2DArray(sudokuSol);
+                // sudoku3.fillValues();
+                // copy(sudoku3, sudokuSol);
+                // sudoku3.removeKDigits();
+                // fillGrid(sudoku3);
+                // print2DArray(sudokuSol);
             }
 
             //change the color
@@ -106,6 +108,7 @@ public class MainActivity extends AppCompatActivity {
                 String value5 = extras.getString("message");
                 gradientDrawable.setColor(ContextCompat.getColor(this,R.color.pink));
                 // shapeDrawable.getPaint().setColor(Color.parseColor("R.color.pink"));
+
 
             }
             if (value.equals("orange")) {
@@ -150,7 +153,13 @@ public class MainActivity extends AppCompatActivity {
                 //shapeDrawable.getPaint().setColor(Color.parseColor("R.color.raspberry"));
 
             }
+            Sudoku sudoku4 = new Sudoku(9, diff);
 
+            sudoku4.fillValues();
+            copy(sudoku4, sudokuSol);
+            sudoku4.removeKDigits();
+            fillGrid(sudoku4);
+            print2DArray(sudokuSol);
 
 
         }
