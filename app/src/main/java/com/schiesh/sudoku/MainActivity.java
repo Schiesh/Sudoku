@@ -1,8 +1,13 @@
 package com.schiesh.sudoku;
 
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.GradientDrawable;
+import android.graphics.drawable.LayerDrawable;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.InputType;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Chronometer;
@@ -31,30 +36,48 @@ public class MainActivity extends AppCompatActivity {
     final int[][] sudokuFin = new int[9][9];
     final int[][] sudokuSol = new int[9][9];
     Chronometer chronometer;
+    //variable for difficulty to be saved
+    int diff = 45;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //make the game
         Sudoku sudoku = new Sudoku(9, default_difficulty);
         sudoku.fillValues();
         copy(sudoku, sudokuSol);
         sudoku.removeKDigits();
         fillGrid(sudoku);
         print2DArray(sudokuSol);
+
+        //timer
         chronometer = findViewById(R.id.chronometer);
         chronometer.start();
 
+        //connect to the border.xml or button backgrounds
+        Drawable drawable = getDrawable(R.drawable.border);
+        GradientDrawable gradientDrawable = (GradientDrawable) drawable ;
 
+        //Drawable draw = getDrawable(R.drawable.toggle_border);
+        //GradientDrawable gd = (GradientDrawable) draw ;
+
+        LayerDrawable grid = (LayerDrawable) getResources().getDrawable(R.drawable.background_grid);
+        GradientDrawable grad_grid = (GradientDrawable) grid.findDrawableByLayerId(R.id.bk_grid);
+
+
+        //catch the intents
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
             String value = extras.getString("message");
 
+            // change the difficulty
             if(value.equals("easy")){
                 String value2 = extras.getString("message");
-
+                diff = 45;
                 Sudoku sudoku3 = new Sudoku(9, 45);
-
                 sudoku3.fillValues();
                 copy(sudoku3, sudokuSol);
                 sudoku3.removeKDigits();
@@ -63,9 +86,8 @@ public class MainActivity extends AppCompatActivity {
             }
             if(value.equals("medium")){
                 String value3 = extras.getString("message");
-
+                diff = 50;
                 Sudoku sudoku4 = new Sudoku(9, 50);
-
                 sudoku4.fillValues();
                 copy(sudoku4, sudokuSol);
                 sudoku4.removeKDigits();
@@ -74,9 +96,8 @@ public class MainActivity extends AppCompatActivity {
             }
             if(value.equals("hard")){
                 String value4 = extras.getString("message");
-
+                diff = 55;
                 Sudoku sudoku5 = new Sudoku(9, 55);
-
                 sudoku5.fillValues();
                 copy(sudoku5, sudokuSol);
                 sudoku5.removeKDigits();
@@ -84,11 +105,108 @@ public class MainActivity extends AppCompatActivity {
                 print2DArray(sudokuSol);
             }
 
+            //change the color
+            if (value.equals("pink")) {
+                String value5 = extras.getString("message");
+                gradientDrawable.setColor(ContextCompat.getColor(this,R.color.pink));
+                grad_grid.setColor(ContextCompat.getColor(this,R.color.pink));
+                //gd.setColor(ContextCompat.getColor(this,R.color.pink));
+
+                Intent i = new Intent(MainActivity.this, MainActivity.class);
+                finish();
+                overridePendingTransition(0, 0);
+                startActivity(i);
+                overridePendingTransition(0, 0);
+            }
+            if (value.equals("orange")) {
+                String value6 = extras.getString("message");
+                gradientDrawable.setColor(ContextCompat.getColor(this,R.color.orange));
+                grad_grid.setColor(ContextCompat.getColor(this,R.color.orange));
+                //gd.setColor(ContextCompat.getColor(this,R.color.orange));
+
+                Intent i = new Intent(MainActivity.this, MainActivity.class);
+                finish();
+                overridePendingTransition(0, 0);
+                startActivity(i);
+                overridePendingTransition(0, 0);
+            }
+            if (value.equals("green")) {
+                String value7 = extras.getString("message");
+                gradientDrawable.setColor(ContextCompat.getColor(this,R.color.green));
+                grad_grid.setColor(ContextCompat.getColor(this,R.color.green));
+                //gd.setColor(ContextCompat.getColor(this,R.color.green));
+
+                Intent i = new Intent(MainActivity.this, MainActivity.class);
+                finish();
+                overridePendingTransition(0, 0);
+                startActivity(i);
+                overridePendingTransition(0, 0);
+            }
+            if (value.equals("blue")) {
+                String value8 = extras.getString("message");
+                gradientDrawable.setColor(ContextCompat.getColor(this,R.color.blue));
+                grad_grid.setColor(ContextCompat.getColor(this,R.color.blue));
+                //gd.setColor(ContextCompat.getColor(this,R.color.blue));
+
+                Intent i = new Intent(MainActivity.this, MainActivity.class);
+                finish();
+                overridePendingTransition(0, 0);
+                startActivity(i);
+                overridePendingTransition(0, 0);
+            }
+            if (value.equals("purple")) {
+                String value9 = extras.getString("message");
+                gradientDrawable.setColor(ContextCompat.getColor(this,R.color.purple));
+                grad_grid.setColor(ContextCompat.getColor(this,R.color.purple));
+               // gd.setColor(ContextCompat.getColor(this,R.color.purple));
+
+                Intent i = new Intent(MainActivity.this, MainActivity.class);
+                finish();
+                overridePendingTransition(0, 0);
+                startActivity(i);
+                overridePendingTransition(0, 0);
+            }
+            if (value.equals("light_green")) {
+                String value10 = extras.getString("message");
+                gradientDrawable.setColor(ContextCompat.getColor(this,R.color.light_green));
+                grad_grid.setColor(ContextCompat.getColor(this,R.color.light_green));
+               // gd.setColor(ContextCompat.getColor(this,R.color.light_green));
+
+                Intent i = new Intent(MainActivity.this, MainActivity.class);
+                finish();
+                overridePendingTransition(0, 0);
+                startActivity(i);
+                overridePendingTransition(0, 0);
+            }
+            if (value.equals("yellow")) {
+               String value11 = extras.getString("message");
+               gradientDrawable.setColor(ContextCompat.getColor(this,R.color.yellow));
+                grad_grid.setColor(ContextCompat.getColor(this,R.color.yellow));
+               // gd.setColor(ContextCompat.getColor(this,R.color.yellow));
+
+                Intent i = new Intent(MainActivity.this, MainActivity.class);
+                finish();
+                overridePendingTransition(0, 0);
+                startActivity(i);
+                overridePendingTransition(0, 0);
+            }
+            if (value.equals("raspberry")) {
+                String value12 = extras.getString("message");
+                gradientDrawable.setColor(ContextCompat.getColor(this,R.color.raspberry));
+                grad_grid.setColor(ContextCompat.getColor(this,R.color.raspberry));
+               // gd.setColor(ContextCompat.getColor(this,R.color.raspberry));
+
+                Intent i = new Intent(MainActivity.this, MainActivity.class);
+                finish();
+                overridePendingTransition(0, 0);
+                startActivity(i);
+                overridePendingTransition(0, 0);
+            }
         }
 
+        //check if all values are correct when done
         final Button checkBtn = findViewById(R.id.checkBtn);
         checkBtn.setOnClickListener(new View.OnClickListener() {
-
             public void onClick(View v) {
                 int btnInt = 0;
                 try {
@@ -130,61 +248,68 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //connects to button to change the difficulty
         final Button difficulty = findViewById(R.id.diffBtn);
         difficulty.setOnClickListener(new View.OnClickListener() {
-
             public void onClick(View v) {
                 switchActivities();
             }
         });
 
+        //connects to button to change the color of the buttons
+        final Button colorChange = findViewById(R.id.colorBtn);
+        colorChange.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                onChangeColorClick();
+            }
+        });
     }
 
+    //switches to GameDifficulty class and returns intent
     private void switchActivities() {
         Intent switchActivityIntent = new Intent(this, GameDifficulty.class);
         startActivity(switchActivityIntent);
     }
 
+    //switches to ColorChange class and returns intent
+    public void onChangeColorClick() {
+        Intent switchColorIntent = new Intent(this, ColorChange.class);
+        startActivity(switchColorIntent);
+    }
+
+    //
     void fillGrid(Sudoku sudoku) {
         int btnInt = 0;
-        for (int i = 0; i<9; i++)
-        {
-            for (int j = 0; j<9; j++)
-            {
+        for (int i = 0; i<9; i++){
+            for (int j = 0; j<9; j++){
                 EditText myButton = findViewById(btn_list[btnInt]);
-                if(sudoku.getValue(i, j) == 0)
-                {
+                if(sudoku.getValue(i, j) == 0){
                     myButton.setText("");
-                }
-                else
-                {
+                }else{
                     myButton.setText(String.valueOf(sudoku.getValue(i, j)));
+                    myButton.setFocusable(false);
+                    myButton.setEnabled(false);
+                    myButton.setCursorVisible(false);
+                    myButton.setKeyListener(null);
+                    myButton.setInputType(InputType.TYPE_NULL);
                 }
-
                 btnInt++;
             }
         }
     }
 
     public void copy(Sudoku sudoku, int[][] sudokuSol) {
-
-        for(int i=0; i<sudokuSol.length; i++)
-        {
-            for(int j=0; j<sudokuSol[i].length; j++)
-            {
+        for(int i=0; i<sudokuSol.length; i++){
+            for(int j=0; j<sudokuSol[i].length; j++){
                 sudokuSol[i][j]=sudoku.getValue(i, j);
             }
         }
     }
 
     public boolean equal(int[][] sudFin, int[][] sudSol) {
-
-        for(int i=0; i<sudSol.length; i++)
-        {
-            for(int j=0; j<sudSol[i].length; j++)
-            {
-                if (sudSol[i][j] != sudFin[i][j])
-                {
+        for(int i=0; i<sudSol.length; i++){
+            for(int j=0; j<sudSol[i].length; j++){
+                if (sudSol[i][j] != sudFin[i][j]){
                     return false;
                 }
             }
@@ -192,12 +317,9 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
-    public void print2DArray(int[][] mat)
-    {
-        for (int i = 0; i<9; i++)
-        {
-            for (int j = 0; j<9; j++)
-            {
+    public void print2DArray(int[][] mat){
+        for (int i = 0; i<9; i++){
+            for (int j = 0; j<9; j++){
                 System.out.print(mat[i][j] + " ");
             }
             System.out.println();

@@ -5,4 +5,31 @@
         <item name="colorPrimaryDark">@color/gray</item>
         <!-- Customize your theme here. -->
     </style>
+    <style name="textBlock">
+       <item name="android:layout_width">35dp</item>
+        <item name="android:layout_height">35dp</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:background">@drawable/button_state_pressed</item>
+        <item name="android:fontFamily">serif-monospace</item>
+        <item name="android:inputType">number</item>
+        <item name="android:text">""</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">@color/cyan</item>
+        <item name="android:textCursorDrawable">@drawable/color_cursor</item>
+        <item name="android:textSize">25sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="buttons">
+        <item name="android:layout_width">200dp</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:background">@drawable/border</item>
+        <item name="android:fontFamily">serif-monospace</item>
+        <item name="android:textColor">@color/cyan</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+
 </resources>
