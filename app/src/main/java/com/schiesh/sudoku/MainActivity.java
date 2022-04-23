@@ -31,14 +31,12 @@ public class MainActivity extends AppCompatActivity {
             R.id.btn79, R.id.btn80, R.id.btn81
     };
 
-    int default_difficulty = 45;
+    int default_difficulty = 50;
+    int difficulty;
     int tries = 0;
     final int[][] sudokuFin = new int[9][9];
     final int[][] sudokuSol = new int[9][9];
     Chronometer chronometer;
-    //variable for difficulty to be saved
-    int diff = 45;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,13 +55,11 @@ public class MainActivity extends AppCompatActivity {
         chronometer = findViewById(R.id.chronometer);
         chronometer.start();
 
-        //connect to the border.xml or button backgrounds
+        //create button border object
         Drawable drawable = getDrawable(R.drawable.border);
-        GradientDrawable gradientDrawable = (GradientDrawable) drawable ;
+        GradientDrawable gradientDrawable = (GradientDrawable) drawable;
 
-        //Drawable draw = getDrawable(R.drawable.toggle_border);
-        //GradientDrawable gd = (GradientDrawable) draw ;
-
+        //create background grid object
         LayerDrawable grid = (LayerDrawable) getResources().getDrawable(R.drawable.background_grid);
         GradientDrawable grad_grid = (GradientDrawable) grid.findDrawableByLayerId(R.id.bk_grid);
 
@@ -74,79 +70,44 @@ public class MainActivity extends AppCompatActivity {
             String value = extras.getString("message");
 
             // change the difficulty
-            if(value.equals("easy")){
-                String value2 = extras.getString("message");
-                diff = 45;
-                Sudoku sudoku3 = new Sudoku(9, 45);
+            if (value.equals("easy")) {
+                difficulty = 45;
+                Sudoku sudoku3 = new Sudoku(9, difficulty);
                 sudoku3.fillValues();
                 copy(sudoku3, sudokuSol);
                 sudoku3.removeKDigits();
                 fillGrid(sudoku3);
                 print2DArray(sudokuSol);
             }
-            if(value.equals("medium")){
-                String value3 = extras.getString("message");
-                diff = 50;
-                Sudoku sudoku4 = new Sudoku(9, 50);
+
+            if (value.equals("medium")) {
+                difficulty = 50;
+                Sudoku sudoku4 = new Sudoku(9, difficulty);
                 sudoku4.fillValues();
                 copy(sudoku4, sudokuSol);
                 sudoku4.removeKDigits();
                 fillGrid(sudoku4);
                 print2DArray(sudokuSol);
             }
-            if(value.equals("hard")){
-                String value4 = extras.getString("message");
-                diff = 55;
-                Sudoku sudoku5 = new Sudoku(9, 55);
+
+            if (value.equals("hard")) {
+                difficulty = 55;
+                Sudoku sudoku5 = new Sudoku(9, difficulty);
                 sudoku5.fillValues();
                 copy(sudoku5, sudokuSol);
                 sudoku5.removeKDigits();
                 fillGrid(sudoku5);
                 print2DArray(sudokuSol);
             }
+        }
+
+        if (extras != null){
+            String value = extras.getString("message");
 
             //change the color
-            if (value.equals("pink")) {
-                String value5 = extras.getString("message");
-                gradientDrawable.setColor(ContextCompat.getColor(this,R.color.pink));
-                grad_grid.setColor(ContextCompat.getColor(this,R.color.pink));
-                //gd.setColor(ContextCompat.getColor(this,R.color.pink));
-
-                Intent i = new Intent(MainActivity.this, MainActivity.class);
-                finish();
-                overridePendingTransition(0, 0);
-                startActivity(i);
-                overridePendingTransition(0, 0);
-            }
-            if (value.equals("orange")) {
-                String value6 = extras.getString("message");
-                gradientDrawable.setColor(ContextCompat.getColor(this,R.color.orange));
-                grad_grid.setColor(ContextCompat.getColor(this,R.color.orange));
-                //gd.setColor(ContextCompat.getColor(this,R.color.orange));
-
-                Intent i = new Intent(MainActivity.this, MainActivity.class);
-                finish();
-                overridePendingTransition(0, 0);
-                startActivity(i);
-                overridePendingTransition(0, 0);
-            }
-            if (value.equals("green")) {
-                String value7 = extras.getString("message");
-                gradientDrawable.setColor(ContextCompat.getColor(this,R.color.green));
-                grad_grid.setColor(ContextCompat.getColor(this,R.color.green));
-                //gd.setColor(ContextCompat.getColor(this,R.color.green));
-
-                Intent i = new Intent(MainActivity.this, MainActivity.class);
-                finish();
-                overridePendingTransition(0, 0);
-                startActivity(i);
-                overridePendingTransition(0, 0);
-            }
             if (value.equals("blue")) {
-                String value8 = extras.getString("message");
                 gradientDrawable.setColor(ContextCompat.getColor(this,R.color.blue));
                 grad_grid.setColor(ContextCompat.getColor(this,R.color.blue));
-                //gd.setColor(ContextCompat.getColor(this,R.color.blue));
 
                 Intent i = new Intent(MainActivity.this, MainActivity.class);
                 finish();
@@ -154,11 +115,10 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(i);
                 overridePendingTransition(0, 0);
             }
+
             if (value.equals("purple")) {
-                String value9 = extras.getString("message");
                 gradientDrawable.setColor(ContextCompat.getColor(this,R.color.purple));
                 grad_grid.setColor(ContextCompat.getColor(this,R.color.purple));
-               // gd.setColor(ContextCompat.getColor(this,R.color.purple));
 
                 Intent i = new Intent(MainActivity.this, MainActivity.class);
                 finish();
@@ -166,35 +126,10 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(i);
                 overridePendingTransition(0, 0);
             }
-            if (value.equals("light_green")) {
-                String value10 = extras.getString("message");
-                gradientDrawable.setColor(ContextCompat.getColor(this,R.color.light_green));
-                grad_grid.setColor(ContextCompat.getColor(this,R.color.light_green));
-               // gd.setColor(ContextCompat.getColor(this,R.color.light_green));
 
-                Intent i = new Intent(MainActivity.this, MainActivity.class);
-                finish();
-                overridePendingTransition(0, 0);
-                startActivity(i);
-                overridePendingTransition(0, 0);
-            }
-            if (value.equals("yellow")) {
-               String value11 = extras.getString("message");
-               gradientDrawable.setColor(ContextCompat.getColor(this,R.color.yellow));
-                grad_grid.setColor(ContextCompat.getColor(this,R.color.yellow));
-               // gd.setColor(ContextCompat.getColor(this,R.color.yellow));
-
-                Intent i = new Intent(MainActivity.this, MainActivity.class);
-                finish();
-                overridePendingTransition(0, 0);
-                startActivity(i);
-                overridePendingTransition(0, 0);
-            }
             if (value.equals("raspberry")) {
-                String value12 = extras.getString("message");
                 gradientDrawable.setColor(ContextCompat.getColor(this,R.color.raspberry));
                 grad_grid.setColor(ContextCompat.getColor(this,R.color.raspberry));
-               // gd.setColor(ContextCompat.getColor(this,R.color.raspberry));
 
                 Intent i = new Intent(MainActivity.this, MainActivity.class);
                 finish();
@@ -202,6 +137,76 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(i);
                 overridePendingTransition(0, 0);
             }
+
+            if (value.equals("pink")) {
+                gradientDrawable.setColor(ContextCompat.getColor(this,R.color.pink));
+                grad_grid.setColor(ContextCompat.getColor(this,R.color.pink));
+
+                Intent i = new Intent(MainActivity.this, MainActivity.class);
+                finish();
+                overridePendingTransition(0, 0);
+                startActivity(i);
+                overridePendingTransition(0, 0);
+            }
+
+            if (value.equals("orange")) {
+                gradientDrawable.setColor(ContextCompat.getColor(this,R.color.orange));
+                grad_grid.setColor(ContextCompat.getColor(this,R.color.orange));
+
+                Intent i = new Intent(MainActivity.this, MainActivity.class);
+                finish();
+                overridePendingTransition(0, 0);
+                startActivity(i);
+                overridePendingTransition(0, 0);
+            }
+
+            if (value.equals("green")) {
+                gradientDrawable.setColor(ContextCompat.getColor(this,R.color.green));
+                grad_grid.setColor(ContextCompat.getColor(this,R.color.green));
+
+                Intent i = new Intent(MainActivity.this, MainActivity.class);
+                finish();
+                overridePendingTransition(0, 0);
+                startActivity(i);
+                overridePendingTransition(0, 0);
+            }
+
+
+
+            if (value.equals("light_green")) {
+                gradientDrawable.setColor(ContextCompat.getColor(this,R.color.light_green));
+                grad_grid.setColor(ContextCompat.getColor(this,R.color.light_green));
+
+                Intent i = new Intent(MainActivity.this, MainActivity.class);
+                finish();
+                overridePendingTransition(0, 0);
+                startActivity(i);
+                overridePendingTransition(0, 0);
+            }
+
+            if (value.equals("yellow")) {
+                gradientDrawable.setColor(ContextCompat.getColor(this,R.color.yellow));
+                grad_grid.setColor(ContextCompat.getColor(this,R.color.yellow));
+
+                Intent i = new Intent(MainActivity.this, MainActivity.class);
+                finish();
+                overridePendingTransition(0, 0);
+                startActivity(i);
+                overridePendingTransition(0, 0);
+            }
+
+            if (value.equals("gray")) {
+                gradientDrawable.setColor(ContextCompat.getColor(this,R.color.gray));
+                grad_grid.setColor(ContextCompat.getColor(this,R.color.gray));
+
+                Intent i = new Intent(MainActivity.this, MainActivity.class);
+                finish();
+                overridePendingTransition(0, 0);
+                startActivity(i);
+                overridePendingTransition(0, 0);
+            }
+
+
         }
 
         //check if all values are correct when done
@@ -248,6 +253,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
         //connects to button to change the difficulty
         final Button difficulty = findViewById(R.id.diffBtn);
         difficulty.setOnClickListener(new View.OnClickListener() {
@@ -255,6 +261,7 @@ public class MainActivity extends AppCompatActivity {
                 switchActivities();
             }
         });
+
 
         //connects to button to change the color of the buttons
         final Button colorChange = findViewById(R.id.colorBtn);

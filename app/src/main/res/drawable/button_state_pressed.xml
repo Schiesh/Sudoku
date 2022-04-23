@@ -3,6 +3,6 @@
 
     <item android:state_focused="true" android:drawable="@drawable/toggle_border"/>
 
-    <item android:state_focused="false" android:drawable="@drawable/border"/>
+    <item android:state_focused="false" android:drawable="@drawable/grid_border"/>
 
 </selector>
