@@ -253,7 +253,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
         //connects to button to change the difficulty
         final Button difficulty = findViewById(R.id.diffBtn);
         difficulty.setOnClickListener(new View.OnClickListener() {
@@ -284,21 +283,18 @@ public class MainActivity extends AppCompatActivity {
         startActivity(switchColorIntent);
     }
 
-    //
-    void fillGrid(Sudoku sudoku) {
+    //fill grid with values and empty cells
+    public void fillGrid(Sudoku sudoku) {
         int btnInt = 0;
         for (int i = 0; i<9; i++){
             for (int j = 0; j<9; j++){
                 EditText myButton = findViewById(btn_list[btnInt]);
                 if(sudoku.getValue(i, j) == 0){
                     myButton.setText("");
+                    myButton.setFocusableInTouchMode(true);
                 }else{
                     myButton.setText(String.valueOf(sudoku.getValue(i, j)));
                     myButton.setFocusable(false);
-                    myButton.setEnabled(false);
-                    myButton.setCursorVisible(false);
-                    myButton.setKeyListener(null);
-                    myButton.setInputType(InputType.TYPE_NULL);
                 }
                 btnInt++;
             }
