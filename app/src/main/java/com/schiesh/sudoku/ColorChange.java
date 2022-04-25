@@ -19,15 +19,12 @@ public class ColorChange extends AppCompatActivity {
         setContentView(R.layout.activity_color_change);
 
         backButton = findViewById(R.id.switchColorButton);
-        backButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        backButton.setOnClickListener(view -> {
 
-                Intent switchColorIntent = new Intent(ColorChange.this, MainActivity.class);
-                switchColorIntent.putExtra("message", color);
-                startActivity(switchColorIntent);
-                finish();
-            }
+            Intent switchColorIntent = new Intent(ColorChange.this, MainActivity.class);
+            switchColorIntent.putExtra("message", color);
+            startActivity(switchColorIntent);
+            finish();
         });
 
     }
@@ -36,6 +33,24 @@ public class ColorChange extends AppCompatActivity {
         boolean checked = ((RadioButton) view).isChecked();
 
         switch(view.getId()) {
+            case R.id.radio_blue:
+                if(checked) {colorId = R.color.blue;
+                    color = "blue";
+
+                }
+                break;
+            case R.id.radio_purple:
+                if(checked) { colorId = R.color.purple;
+                    color = "purple";
+
+                }
+                break;
+            case R.id.radio_raspberry:
+                if(checked) { colorId = R.color.raspberry;
+                    color = "raspberry";
+
+                }
+                break;
             case R.id.radio_pink:
                 if(checked) {colorId = R.color.pink;
                 color = "pink";
@@ -54,18 +69,6 @@ public class ColorChange extends AppCompatActivity {
 
                 }
                 break;
-            case R.id.radio_blue:
-                if(checked) {colorId = R.color.blue;
-                color = "blue";
-
-                }
-                break;
-            case R.id.radio_purple:
-                if(checked) { colorId = R.color.purple;
-                color = "purple";
-
-                }
-                break;
             case R.id.radio_light_green:
                 if(checked) { colorId = R.color.light_green;
                 color = "light_green";
@@ -78,9 +81,9 @@ public class ColorChange extends AppCompatActivity {
 
                 }
                 break;
-            case R.id.radio_raspberry:
-                if(checked) { colorId = R.color.raspberry;
-                color = "raspberry";
+            case R.id.radio_cyan:
+                if(checked) { colorId = R.color.cyan;
+                    color = "cyan";
 
                 }
                 break;

@@ -7,8 +7,6 @@ import android.graphics.drawable.LayerDrawable;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.InputType;
-import android.view.View;
 import android.widget.Button;
 import android.widget.Chronometer;
 import android.widget.EditText;
@@ -195,9 +193,9 @@ public class MainActivity extends AppCompatActivity {
                 overridePendingTransition(0, 0);
             }
 
-            if (value.equals("gray")) {
-                gradientDrawable.setColor(ContextCompat.getColor(this,R.color.gray));
-                grad_grid.setColor(ContextCompat.getColor(this,R.color.gray));
+            if (value.equals("cyan")) {
+                gradientDrawable.setColor(ContextCompat.getColor(this,R.color.cyan));
+                grad_grid.setColor(ContextCompat.getColor(this,R.color.cyan));
 
                 Intent i = new Intent(MainActivity.this, MainActivity.class);
                 finish();
@@ -211,64 +209,54 @@ public class MainActivity extends AppCompatActivity {
 
         //check if all values are correct when done
         final Button checkBtn = findViewById(R.id.checkBtn);
-        checkBtn.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                int btnInt = 0;
-                try {
-                    for (int i = 0; i < 9; i++) {
-                        for (int j = 0; j < 9; j++) {
-                            EditText myText = findViewById(btn_list[btnInt]);
-                            String val = myText.getText().toString();
-                            int finalVal = Integer.parseInt(val);
-                            sudoku.setValue(i, j, finalVal);
-                            copy(sudoku, sudokuFin);
-                            btnInt++;
-                        }
-                    }
-                    if (equal(sudokuFin, sudokuSol)) {
-                        TextView textView = findViewById(R.id.condition);
-                        textView.setText(R.string.winner);
-                        chronometer.stop();
-                    } else if (tries == 3) {
-                        TextView textView = findViewById(R.id.condition);
-                        textView.setText(R.string.loser);
-                        chronometer.stop();
-                    } else {
-                        tries++;
-                        TextView textView = findViewById(R.id.condition);
-                        textView.setText(R.string.tryAgain + (3 - tries));
+        checkBtn.setOnClickListener(v -> {
+            int btnInt = 0;
+            try {
+                for (int i = 0; i < 9; i++) {
+                    for (int j = 0; j < 9; j++) {
+                        EditText myText = findViewById(btn_list[btnInt]);
+                        String val = myText.getText().toString();
+                        int finalVal = Integer.parseInt(val);
+                        sudoku.setValue(i, j, finalVal);
+                        copy(sudoku, sudokuFin);
+                        btnInt++;
                     }
                 }
-                catch (NumberFormatException ex){
-                    if (tries < 3) {
-                        tries++;
-                    }
+                if (equal(sudokuFin, sudokuSol)) {
                     TextView textView = findViewById(R.id.condition);
-                    textView.setText(R.string.tryAgain);
-                    if (tries == 3) {
-                        textView.setText(R.string.loser);
-                        chronometer.stop();
-                    }
+                    textView.setText(R.string.winner);
+                    chronometer.stop();
+                } else if (tries == 3) {
+                    TextView textView = findViewById(R.id.condition);
+                    textView.setText(R.string.loser);
+                    chronometer.stop();
+                } else {
+                    tries++;
+                    TextView textView = findViewById(R.id.condition);
+                    textView.setText(R.string.tryAgain + (3 - tries));
+                }
+            }
+            catch (NumberFormatException ex){
+                if (tries < 3) {
+                    tries++;
+                }
+                TextView textView = findViewById(R.id.condition);
+                textView.setText(R.string.tryAgain);
+                if (tries == 3) {
+                    textView.setText(R.string.loser);
+                    chronometer.stop();
                 }
             }
         });
 
         //connects to button to change the difficulty
         final Button difficulty = findViewById(R.id.diffBtn);
-        difficulty.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                switchActivities();
-            }
-        });
+        difficulty.setOnClickListener(v -> switchActivities());
 
 
         //connects to button to change the color of the buttons
         final Button colorChange = findViewById(R.id.colorBtn);
-        colorChange.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                onChangeColorClick();
-            }
-        });
+        colorChange.setOnClickListener(v -> onChangeColorClick());
     }
 
     //switches to GameDifficulty class and returns intent
