@@ -10,7 +10,7 @@
     <string name="medium">Medium</string>
     <string name="hard">Hard</string>
     <string name="diffSet">Set Difficulty</string>
-    <string name="choose">Button color</string>
+    <string name="choose">Set Color</string>
     <string name="choose_color">Choose a color</string>
     <string name="color">My color</string>
 </resources>
